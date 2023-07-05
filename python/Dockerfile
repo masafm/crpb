@@ -1,6 +1,6 @@
-FROM python:3.10-slim
-COPY --from=datadog/serverless-init:beta8 /datadog-init /app/datadog-init
-ENV PYTHONUNBUFFERED True
+FROM python:3.11
+COPY --from=datadog/serverless-init /datadog-init /app/datadog-init
+ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 COPY requirements.txt app.py /app/
 RUN pip install --no-cache-dir -r requirements.txt
