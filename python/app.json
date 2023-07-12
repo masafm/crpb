@@ -1,10 +1,16 @@
 {
-    "name": "cloud-run-demo-python",
+    "name": "cloud-run-demo-python2",
     "env": {
         "DD_API_KEY": {
             "description": "Your Datadog's API KEY (see: https://docs.datadoghq.com/account_management/api-app-keys)",
             "required": true
-        }
+        },
+	"DD_TRACE_PROPAGATION_STYLE": {
+	    "value": "datadog"
+	},
+	"DD_TRACE_ENABLED": {
+	    "value": "true"
+	}
     },
     "options": {
         "allow-unauthenticated": true,
