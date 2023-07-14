@@ -1,10 +1,11 @@
 import os
 from flask import Flask, Response
+from flask import request
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/",methods=['post','get'])
 def home():
-    return Response("{\"msg\":\"Hello world!\"}", status=200, mimetype='application/json')
+    return Response(request.get_data(), status=200, mimetype='application/json')
 
 app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
