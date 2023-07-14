@@ -1,4 +1,3 @@
-#FROM --platform=linux/x86_64 python:3.11
 FROM python:3.11
 COPY --from=datadog/serverless-init /datadog-init /app/datadog-init
 ENV PYTHONUNBUFFERED=1
